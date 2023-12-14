@@ -1,0 +1,19 @@
+$breakpoints: (
+    mobile: 375px,
+    desktop: 1440px
+);
+
+@mixin mq($from: null, $to: null) {
+    $from-width: if($from, map-get($breakpoints, $from), null);
+    $to-width: if($to, map-get($breakpoints, $to), null);
+
+    @if $from-width {
+        $media-query: "screen and (min-width: #{$from-width})";
+        @if $to-width {
+            $media-query: "#{$media-query} and (max-width: #{$to-width - 1})";
+        }
+        @media #{$media-query} {
+            @content;
+        }
+    }
+}
