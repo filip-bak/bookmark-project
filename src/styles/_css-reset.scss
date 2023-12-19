@@ -41,6 +41,10 @@ picture {
     display: block;
 }
 
+a {
+    text-decoration: inherit;
+}
+
 input,
 button,
 textarea,
