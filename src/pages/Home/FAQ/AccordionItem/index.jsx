@@ -1,5 +1,6 @@
 // AccordionItem.jsx
 import { useState } from "react";
+import icons from "@icons/icons.svg";
 import styles from "./AccordionItem.module.scss";
 
 const AccordionItem = ({ label, children }) => {
@@ -16,7 +17,7 @@ const AccordionItem = ({ label, children }) => {
         <svg
           className={`${styles.arrow} ${isOpen ? styles["arrow-rotate"] : ""}`}
         >
-          <use href="/src/assets/images/svg/icons.svg#icon-arrow"></use>
+          <use href={`${icons}#icon-arrow`}></use>
         </svg>
       </div>
       {isOpen && <p className={styles.content}>{children}</p>}

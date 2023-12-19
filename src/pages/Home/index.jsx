@@ -9,24 +9,30 @@ import Newsletter from "./Newsletter";
 import styles from "./Home.module.scss";
 import SplitBox from "../../components/SplitBox";
 import Button from "../../components/Button";
+import icons from "@icons/icons.svg";
 
 const Home = () => {
   const [showPopup, setShowPopup] = useState(false);
-
   const handleClick = () => {
     setShowPopup(false);
   };
 
   useEffect(() => {
+    const debounceDelay = 250;
+    let timeoutId;
+
+    const handleMouseMove = (e) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        if (e.pageY <= 10) {
+          setShowPopup(true);
+        }
+      }, debounceDelay);
+    };
+
     const popupTimer = setTimeout(() => {
       setShowPopup(true);
     }, 30000);
-    console.log(showPopup);
-    const handleMouseMove = (e) => {
-      if (e.clientY <= 10) {
-        setShowPopup(true);
-      }
-    };
 
     window.addEventListener("mousemove", handleMouseMove);
 
@@ -51,7 +57,7 @@ const Home = () => {
             </SplitBox>
             <button className={styles.btn} onClick={handleClick}>
               <svg className={styles.close}>
-                <use href="/src/assets/images/svg/icons.svg#icon-close"></use>
+                <use href={`${icons}#icon-close`}></use>
               </svg>
             </button>
           </div>
