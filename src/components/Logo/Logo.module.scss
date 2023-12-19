@@ -1,0 +1,13 @@
+@use "/src/styles/variables" as *;
+
+.container {
+    display: flex;
+    width: 148px;
+    height: 30px;
+}
+.light {
+    color: $light-color;
+}
+.dark {
+    color: $dark-color;
+}

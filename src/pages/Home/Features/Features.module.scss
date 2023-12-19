@@ -1,0 +1,23 @@
+@use "@styles/variables" as *;
+@use "@styles/mixins" as m;
+
+.section {
+    padding-top: 2.5rem;
+}
+
+.box {
+    text-align: center;
+
+    margin-inline: auto;
+    max-width: 870px;
+    padding-inline: var(--wrapper-padding-inline);
+}
+.title {
+    @include m.primaryTitle;
+
+    margin-bottom: 20px;
+}
+.description {
+    @include m.description;
+    margin-bottom: 50px;
+}

@@ -1,0 +1,22 @@
+@use "@styles/variables" as *;
+
+.container {
+    display: flex;
+    gap: 44px;
+}
+
+.link {
+    color: $dark-color;
+    font-size: $fs-200;
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+    transition: color 200ms;
+
+    &:hover {
+        color: $brand-accent;
+    }
+}
+.light {
+    color: $light-color;
+}

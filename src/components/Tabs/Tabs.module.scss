@@ -1,0 +1,47 @@
+@use "@styles/variables" as *;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 126px;
+    height: 700px;
+}
+
+.list {
+    display: flex;
+    gap: 2.6rem;
+    margin-bottom: 10px;
+}
+
+.tab {
+    white-space: nowrap;
+    padding: 20px 35px;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 17px;
+    cursor: pointer;
+
+    &:hover {
+        color: $brand-accent;
+    }
+
+    &.active {
+        border-bottom: 4px solid $brand-accent;
+    }
+}
+
+.tab-content {
+    display: flex;
+    flex-direction: column;
+
+    & > div {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    & > div.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}

@@ -4,13 +4,11 @@ import SharedLayout from "./components/SharedLayout";
 
 function App() {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<SharedLayout />}>
-          <Route index element={<Home />} />
-        </Route>
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<Home />} />
+      </Route>
+    </Routes>
   );
 }
 

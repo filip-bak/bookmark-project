@@ -1,0 +1,45 @@
+@use "@styles/variables" as *;
+@use "@styles/mixins" as m;
+
+.container {
+    border-bottom: 1px solid rgb(219, 219, 219);
+
+    &:last-child {
+        border-bottom: 0;
+    }
+}
+
+.label {
+    position: relative;
+    padding-block: 15px;
+    cursor: pointer;
+
+    transition: color 0.3s;
+
+    &:hover {
+        color: $brand-accent;
+    }
+}
+.arrow {
+    position: absolute;
+    stroke: $brand-blue;
+    top: 16px;
+    right: 22px;
+    width: 20px;
+    height: 20px;
+    transition:
+        stroke 150ms,
+        transform 0.2s;
+}
+.arrow-rotate {
+    transform: rotate(180deg);
+    stroke: $brand-accent;
+}
+
+.content {
+    @include m.description;
+    letter-spacing: -0.8px;
+    line-height: 2;
+    margin-top: 16px;
+    margin-bottom: 29px;
+}

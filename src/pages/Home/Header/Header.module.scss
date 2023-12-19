@@ -1,0 +1,38 @@
+@use "@styles/variables" as *;
+
+.container {
+    margin-top: 185px;
+    height: 460px;
+}
+.content {
+    max-width: 500px;
+    z-index: 1;
+}
+.title {
+    font-size: $fs-900;
+    line-height: 1.1;
+    letter-spacing: 0.3px;
+
+    margin-bottom: 25px;
+}
+.description {
+    color: $gray-color;
+    margin-bottom: 32px;
+    line-height: 1.55;
+}
+.box {
+    display: flex;
+    gap: 1rem;
+}
+.btn-text {
+    letter-spacing: 0.6px;
+}
+.poster {
+    margin-left: 15px;
+    transform: translateY(-78px);
+    position: relative;
+}
+
+.illustration {
+    width: 650px;
+}

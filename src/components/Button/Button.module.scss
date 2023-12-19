@@ -1,0 +1,59 @@
+@use "@styles/variables" as *;
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2px 0 0;
+
+    font-size: $fs-100;
+    font-weight: $fw-500;
+    letter-spacing: 1.5px;
+
+    border: 2px solid transparent;
+    border-radius: 5px;
+
+    color: $dark-color;
+    background-color: hsl(229, 8%, 95%);
+
+    transition:
+        color 200ms,
+        background-color 200ms,
+        border-color 200ms,
+        box-shadow 200ms;
+
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: $light-color;
+        border-color: $dark-color;
+    }
+}
+
+.primary {
+    color: $light-color;
+    background-color: $brand-blue;
+
+    &:hover,
+    &:focus {
+        color: $brand-blue;
+        border-color: $brand-blue;
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+    }
+}
+.secondary {
+    color: $light-color;
+    background-color: $brand-accent;
+
+    &:hover,
+    &:focus {
+        color: $brand-accent;
+        border-color: $brand-accent;
+    }
+}
+
+.shadow {
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+}

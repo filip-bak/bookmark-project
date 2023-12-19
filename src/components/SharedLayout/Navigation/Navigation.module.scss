@@ -1,0 +1,21 @@
+@use "/src/styles/variables" as *;
+@use "/src/styles/mixins" as *;
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3rem;
+    margin-inline: auto;
+    padding-inline: var(--wrapper-padding-inline);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.logo {
+    margin-left: 6px;
+}
