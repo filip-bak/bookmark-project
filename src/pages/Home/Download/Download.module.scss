@@ -2,34 +2,64 @@
 @use "@styles/mixins" as m;
 
 .container {
-    margin-top: 32px;
+    margin-top: 115px;
+
+    @include m.mq(desktop) {
+        margin-top: 32px;
+    }
 }
 .content {
     max-width: 550px;
     margin-inline: auto;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 42px;
+
+    @include m.mq(desktop) {
+        margin-bottom: 46px;
+    }
 }
 .title {
     @include m.primaryTitle;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
+
+    @include m.mq(desktop) {
+        margin-bottom: 18px;
+    }
 }
 .description {
     @include m.description;
+    font-size: 15px;
     line-height: 1.6;
+    padding-inline: 28px;
+
+    @include m.mq(desktop) {
+        font-size: $fs-400;
+        margin-top: 21px;
+        padding-inline: 0;
+    }
 }
-.box {
+.cards {
     display: grid;
-    grid-template-rows: 10px 10px 1fr 10px 10px;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
-        "chrome ....... ....."
-        "chrome firefox ....."
-        "chrome firefox opera"
-        "...... firefox opera"
-        "...... ....... opera";
+        "chrome"
+        "firefox"
+        "opera";
 
     justify-content: center;
-    gap: 30px;
+    column-gap: 30px;
+    row-gap: 41px;
+
+    @include m.mq(desktop) {
+        grid-template-rows: 40px 40px 1fr 40px 40px;
+        grid-template-areas:
+            "chrome ....... ....."
+            "chrome firefox ....."
+            "chrome firefox opera"
+            "...... firefox opera"
+            "...... ....... opera";
+        row-gap: 0px;
+    }
 
     & :nth-child(1) {
         grid-area: chrome;

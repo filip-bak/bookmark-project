@@ -5,8 +5,9 @@ import styles from "./Button.module.scss";
 const Button = ({
   width = 110,
   height = 40,
-  variant = "primary",
+  variant,
   shadow = false,
+  className,
   textClass,
   props,
   children,
@@ -24,7 +25,11 @@ const Button = ({
   const buttonClasses = classes.filter(Boolean).join(" ");
 
   return (
-    <button className={buttonClasses} style={{ width, height }} {...props}>
+    <button
+      className={`${buttonClasses} ${className}`}
+      style={{ width, height }}
+      {...props}
+    >
       <span className={textClass}>{children}</span>
     </button>
   );
@@ -34,6 +39,8 @@ Button.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
   variant: PropTypes.oneOf(["primary", "secondary"]),
+  className: PropTypes.string,
+  textClass: PropTypes.string,
   shadow: PropTypes.bool,
   props: PropTypes.shape(React.ButtonHTMLAttributes),
   children: PropTypes.node,

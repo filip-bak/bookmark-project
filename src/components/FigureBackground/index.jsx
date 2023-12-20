@@ -9,7 +9,11 @@ const FigureBackground = ({
 }) => {
   return (
     <div
-      style={{ width, top, height }}
+      style={{
+        width: width,
+        top: top,
+        height: height,
+      }}
       className={`${styles.figure} ${reverse && styles.right}`}
     />
   );

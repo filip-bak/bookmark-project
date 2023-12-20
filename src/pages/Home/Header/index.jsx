@@ -4,8 +4,11 @@ import Button from "@components/Button";
 import SplitBox from "@components/SplitBox";
 import illustration from "@icons/illustration-hero.svg";
 import FigureBackground from "../../../components/FigureBackground";
+import useResponsive from "../../../hooks/useResponsive";
 
 const Header = () => {
+  const { isDesktop } = useResponsive();
+
   return (
     <header className={styles.container}>
       <SplitBox>
@@ -18,7 +21,7 @@ const Header = () => {
           </p>
           <div className={styles.box}>
             <Button
-              width={166}
+              width={isDesktop ? 166 : 150}
               height={48}
               variant="primary"
               textClass={styles["btn-text"]}
@@ -26,7 +29,7 @@ const Header = () => {
               Get it on Chrome
             </Button>
             <Button
-              width={160}
+              width={isDesktop ? 160 : 145}
               height={48}
               shadow
               textClass={styles["btn-text"]}
@@ -41,7 +44,11 @@ const Header = () => {
             src={illustration}
             alt="Monitor illustration"
           />
-          <FigureBackground />
+          <FigureBackground
+            width={isDesktop ? 515 : 303}
+            height={isDesktop ? 354 : 203}
+            top={isDesktop ? 139 : 56}
+          />
         </div>
       </SplitBox>
     </header>

@@ -1,38 +1,79 @@
 @use "@styles/variables" as *;
+@use "@styles/mixins" as m;
 
 .container {
-    margin-top: 185px;
-    height: 460px;
+    margin-top: 74px;
+
+    @include m.mq(desktop) {
+        margin-top: 185px;
+    }
 }
 .content {
-    max-width: 500px;
+    text-align: center;
     z-index: 1;
+    max-width: 505px;
+    @include m.mq(tablet, desktop) {
+        margin-inline: auto;
+    }
+    @include m.mq(desktop) {
+        text-align: left;
+    }
 }
 .title {
-    font-size: $fs-900;
-    line-height: 1.1;
+    font-size: $fs-700;
+    line-height: 1.2;
     letter-spacing: 0.3px;
 
-    margin-bottom: 25px;
+    margin-bottom: 21px;
+
+    @include m.mq(desktop) {
+        margin-top: 0;
+        line-height: 1.1;
+        font-size: $fs-900;
+        margin-bottom: 25px;
+    }
 }
 .description {
+    font-size: 15px;
+    max-width: 300px;
+    margin-inline: auto;
+
     color: $gray-color;
     margin-bottom: 32px;
-    line-height: 1.55;
+    line-height: 1.65;
+
+    @include m.mq(desktop) {
+        font-size: $fs-400;
+        max-width: unset;
+        margin-inline: 0;
+        line-height: 1.55;
+        margin-bottom: 32px;
+    }
 }
 .box {
     display: flex;
     gap: 1rem;
+    justify-content: center;
+
+    @include m.mq(desktop) {
+        justify-content: left;
+    }
 }
 .btn-text {
     letter-spacing: 0.6px;
 }
 .poster {
-    margin-left: 15px;
-    transform: translateY(-78px);
     position: relative;
+    margin-left: 15px;
+    @include m.mq(desktop) {
+        transform: translateY(-78px);
+    }
 }
 
 .illustration {
-    width: 650px;
+    width: 350px;
+
+    @include m.mq(desktop) {
+        width: 650px;
+    }
 }

@@ -2,6 +2,7 @@
 
 $breakpoints: (
     mobile: 375px,
+    tablet: 965px,
     desktop: 1440px
 );
 
@@ -21,8 +22,12 @@ $breakpoints: (
 }
 
 @mixin primaryTitle {
-    font-size: $fs-700;
+    font-size: $fs-500;
     letter-spacing: 1px;
+
+    @include mq(desktop) {
+        font-size: $fs-700;
+    }
 }
 
 @mixin description {

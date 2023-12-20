@@ -1,7 +1,13 @@
+@use "/src/styles/mixins" as m;
+
 .wrapper {
     margin-inline: auto;
-    max-width: 1440px;
-}
-.content {
-    grid-column: content;
+    max-width: 375px;
+
+    @include m.mq(tablet, desktop) {
+        max-width: 965px;
+    }
+    @include m.mq(desktop) {
+        max-width: 1440px;
+    }
 }

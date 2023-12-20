@@ -1,6 +1,14 @@
+@use "@styles/mixins" as m;
+
 :root {
-    --wrapper-padding-inline: 165px;
+    --wrapper-padding-inline: 26px;
     --wrapper-max-width: 1440px;
 
     --section-padding-block: 3rem;
+}
+
+@include m.mq(tablet) {
+    :root {
+        --wrapper-padding-inline: 165px;
+    }
 }

@@ -1,14 +1,17 @@
+import useResponsive from "../../../hooks/useResponsive";
 import Logo from "../../Logo";
 import NavLinks from "../NavLinks";
 import styles from "./Footer.module.scss";
 import icons from "@icons/icons.svg";
 
 const Footer = () => {
+  const { isDesktop } = useResponsive();
+
   return (
     <div className={styles.container}>
       <nav className={styles.nav}>
         <Logo className={styles.logo} />
-        <NavLinks light />
+        <NavLinks column={!isDesktop} light />
       </nav>
       <div className={styles.social}>
         <a className={styles.link} href="#">

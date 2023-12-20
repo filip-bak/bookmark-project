@@ -38,7 +38,13 @@ export const FAQ = () => {
         </AccordionItem>
       </div>
       <div className={styles["btn-box"]}>
-        <Button width={114} height={47} textClass={styles["btn-text"]} shadow>
+        <Button
+          width={114}
+          height={47}
+          variant="primary"
+          textClass={styles["btn-text"]}
+          shadow
+        >
           More Info
         </Button>
       </div>

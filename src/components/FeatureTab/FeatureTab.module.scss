@@ -1,4 +1,5 @@
 @use "@styles/variables" as *;
+@use "@styles/mixins" as m;
 
 .poster {
     margin-top: 17px;
@@ -7,22 +8,57 @@
 }
 
 .illustration {
-    margin-left: 170px;
-    width: 536px;
+    margin-left: 33px;
+    width: 307px;
+
+    @include m.mq(desktop) {
+        margin-left: 170px;
+        width: 536px;
+    }
 }
 
 .box {
-    margin-left: 110px;
+    text-align: center;
+    max-width: 536px;
+    padding-inline: 26px;
+
+    @include m.mq(desktop) {
+        text-align: left;
+        margin-left: 110px;
+        padding-inline: 0;
+    }
 }
 .title {
-    font-size: $fs-700;
+    font-size: $fs-500;
     font-weight: $fw-500;
     letter-spacing: 1px;
-    margin-bottom: 20px;
+    margin-bottom: 13px;
+
+    @include m.mq(desktop) {
+        font-size: $fs-700;
+        margin-bottom: 20px;
+    }
 }
 .description {
-    margin-bottom: 33px;
-    color: $gray-color;
+    color: hsl(229, 8%, 60%);
+    font-size: 15px;
+    letter-spacing: 0.2px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+
+    @include m.mq(desktop) {
+        font-size: $fs-400;
+        letter-spacing: unset;
+        line-height: unset;
+        margin-bottom: 33px;
+    }
+}
+.btn {
+    margin-inline: auto;
+
+    @include m.mq(desktop) {
+        margin-inline: unset;
+    }
 }
 .btn-text {
     letter-spacing: 0.6px;

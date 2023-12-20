@@ -29,7 +29,7 @@ const Tabs = ({ tabs }) => {
       <div className={styles["tab-content"]}>
         {activeTabContent.map((tab) => (
           <div key={tab.id} className={isActiveStyles(tab.id)}>
-            <SplitBox direction="right">
+            <SplitBox direction="right" rowGap={1}>
               <FeatureTab tab={tab} />
             </SplitBox>
           </div>

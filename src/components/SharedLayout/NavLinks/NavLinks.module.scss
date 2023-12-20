@@ -1,14 +1,21 @@
 @use "@styles/variables" as *;
+@use "@styles/mixins" as m;
 
 .container {
     display: flex;
-    gap: 44px;
+    column-gap: 44px;
+    row-gap: 28px;
+    text-align: center;
+
+    @include m.mq(tablet) {
+        text-align: left;
+    }
 }
 
 .link {
     color: $dark-color;
     font-size: $fs-200;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 
     text-transform: uppercase;
     transition: color 200ms;
@@ -16,7 +23,17 @@
     &:hover {
         color: $brand-accent;
     }
+
+    @include m.mq(tablet) {
+        letter-spacing: 1px;
+    }
 }
 .light {
     color: $light-color;
+}
+.column {
+    flex-direction: column;
+    @include m.mq(tablet) {
+        flex-direction: row;
+    }
 }

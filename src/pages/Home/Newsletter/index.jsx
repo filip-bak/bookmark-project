@@ -2,17 +2,19 @@ import { useEffect, useState } from "react";
 import Button from "../../../components/Button";
 import styles from "./Newsletter.module.scss";
 import { newsletterSchema } from "./schema";
+import useResponsive from "../../../hooks/useResponsive";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState(null);
   const [peopleCount, setPeopleCount] = useState(35000);
 
+  const { isDesktop } = useResponsive();
+
   useEffect(() => {
     const animationDuration = 20000;
     const framesPerSecond = 60;
     const decrementPerSecond = 1850;
-    const framesCount = framesPerSecond * (animationDuration / 1000);
     const decrement = decrementPerSecond / framesPerSecond;
     const interval = 1000 / framesPerSecond;
 
@@ -47,12 +49,16 @@ const Newsletter = () => {
   return (
     <div id="contact" className={styles.container}>
       <p className={styles.info}>
-        {Math.round(peopleCount).toLocaleString("en-US")}+ Already joined
+        <span className={styles["people-count"]}>
+          {Math.round(peopleCount).toLocaleString("en-US")}
+        </span>
+        + Already joined
       </p>
       <h2 className={styles.title}>Stay up-to-date with what we're doing</h2>
       <form onSubmit={handleSubmit} formNoValidate className={styles.form}>
         <div className={styles.box}>
           <input
+            name="email"
             formNoValidate
             onChange={(e) => setEmail(e.target.value)}
             className={`${styles.input} ${error ? styles["input-error"] : ""}`}
@@ -61,8 +67,10 @@ const Newsletter = () => {
           />
           {error ? <div className={styles.error}>{error}</div> : null}
         </div>
+
         <Button
-          width={126}
+          className={styles.btn}
+          width={isDesktop ? 126 : 310}
           height={48}
           textClass={styles["btn-text"]}
           variant="secondary"

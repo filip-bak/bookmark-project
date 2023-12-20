@@ -1,10 +1,11 @@
 import styles from "./NavLinks.module.scss";
 
-const NavLinks = ({ light = false }) => {
+const NavLinks = ({ column = false, light = false }) => {
   const lightStyle = light ? styles.light : "";
+  const columnStyle = column ? styles.column : "";
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${columnStyle}`}>
       <a className={`${styles.link} ${lightStyle}`} href="#features">
         Features
       </a>

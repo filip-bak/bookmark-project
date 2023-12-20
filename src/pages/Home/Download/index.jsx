@@ -13,7 +13,7 @@ const Download = () => {
           you've got a favourite you'd like us to prioritize
         </p>
       </div>
-      <div className={styles.box}>
+      <div className={styles.cards}>
         <Cards cards={downloadCards} />
       </div>
     </div>

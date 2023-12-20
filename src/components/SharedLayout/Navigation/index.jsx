@@ -3,6 +3,7 @@ import Logo from "../../Logo";
 import NavLinks from "../NavLinks";
 import Button from "../../Button";
 import styles from "./Navigation.module.scss";
+import icons from "@icons/icons.svg";
 
 const Navigation = () => {
   return (
@@ -14,6 +15,11 @@ const Navigation = () => {
           LOGIN
         </Button>
       </nav>
+      <button className={styles.burger}>
+        <svg className={styles.icon}>
+          <use href={`${icons}#icon-hamburger`}></use>
+        </svg>
+      </button>
     </div>
   );
 };

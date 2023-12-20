@@ -12,7 +12,13 @@ const Cards = ({ cards }) => {
       <svg className={styles.dots}>
         <use href="/src/assets/images/svg/icons.svg#icon-bg-dots"></use>
       </svg>
-      <Button width={230} height={46} textClass={styles["btn-text"]} shadow>
+      <Button
+        variant="primary"
+        width={230}
+        height={46}
+        textClass={styles["btn-text"]}
+        shadow
+      >
         Add & install Extension
       </Button>
     </div>

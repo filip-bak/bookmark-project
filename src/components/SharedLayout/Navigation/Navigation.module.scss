@@ -1,21 +1,42 @@
 @use "/src/styles/variables" as *;
-@use "/src/styles/mixins" as *;
+@use "/src/styles/mixins" as m;
 
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 3rem;
+    padding-top: 2.3rem;
     margin-inline: auto;
     padding-inline: var(--wrapper-padding-inline);
-}
 
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 50px;
+    @include m.mq(tablet) {
+        padding-top: 3rem;
+    }
 }
-
 .logo {
     margin-left: 6px;
+}
+.nav {
+    display: none;
+    align-items: center;
+    gap: 50px;
+
+    @include m.mq(tablet) {
+        display: flex;
+    }
+}
+.burger {
+    padding: 4px;
+    display: flex;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+    @include m.mq(tablet) {
+        display: none;
+    }
+}
+.icon {
+    width: 20px;
+    height: 20px;
 }

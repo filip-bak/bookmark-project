@@ -1,32 +1,66 @@
 @use "@styles/variables" as *;
+@use "@styles/mixins" as m;
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 126px;
+    gap: 125px;
     height: 700px;
 }
 
 .list {
     display: flex;
-    gap: 2.6rem;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 10px;
+
+    @include m.mq(desktop) {
+        flex-direction: row;
+        border-bottom: 1px solid rgb(214, 214, 214);
+    }
 }
 
 .tab {
-    white-space: nowrap;
-    padding: 20px 35px;
-    transition: background-color 0.3s ease-in-out;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 310px;
+    padding: 15.2px 35px;
+
     font-size: 17px;
+    white-space: nowrap;
+    border-bottom: 1px solid rgb(214, 214, 214);
+
     cursor: pointer;
+    transition: border-bottom 0.15s;
 
     &:hover {
         color: $brand-accent;
     }
 
-    &.active {
-        border-bottom: 4px solid $brand-accent;
+    &.active::before {
+        visibility: visible;
+    }
+
+    &::before {
+        content: "";
+        visibility: hidden;
+        position: absolute;
+        bottom: 0px;
+        width: 46%;
+        height: 1px;
+        border-bottom: 4px solid red;
+
+        @include m.mq(desktop) {
+            width: 100%;
+        }
+    }
+
+    @include m.mq(desktop) {
+        width: 243px;
+        border-bottom: 0;
+        padding: 23px 35px;
     }
 }
 

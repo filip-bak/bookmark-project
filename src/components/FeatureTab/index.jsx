@@ -2,37 +2,45 @@ import PropTypes from "prop-types";
 import FigureBackground from "../FigureBackground";
 import Button from "../Button";
 import styles from "./FeatureTab.module.scss";
-import { useEffect, useRef, useState } from "react";
 import { featuresTabs } from "../../pages/Home/Features/tabsConfig";
+import useResponsive from "../../hooks/useResponsive";
 
 const FeatureTab = ({ tab }) => {
   const isBigFigure =
     tab.id === featuresTabs[1].id || tab.id === featuresTabs[2].id;
 
+  const { isTablet, isDesktop } = useResponsive();
+
   return (
     <>
       <div className={styles.poster}>
         <img className={styles.illustration} src={tab.img} alt="illustration" />
+
         <FigureBackground
-          width={640}
-          height={isBigFigure ? 400 : 354}
-          top="80px"
+          width={isDesktop ? 640 : 307}
+          height={
+            isDesktop ? (isBigFigure ? 400 : 354) : isBigFigure ? 244 : 203
+          }
+          top={isDesktop ? 80 : 33}
           reverse
         />
-        {/* <FigureBackground width={640} top="24%" reverse /> */}
       </div>
       <div className={styles.box}>
         <h3 className={styles.title}>{tab.title}</h3>
         <p className={styles.description}>{tab.description}</p>
-        <Button
-          variant="primary"
-          width={114}
-          height={48}
-          textClass={styles["btn-text"]}
-          shadow
-        >
-          More Info
-        </Button>
+
+        {isTablet && (
+          <Button
+            variant="primary"
+            width={114}
+            height={48}
+            className={styles.btn}
+            textClass={styles["btn-text"]}
+            shadow
+          >
+            More Info
+          </Button>
+        )}
       </div>
     </>
   );
