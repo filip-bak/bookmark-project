@@ -32,7 +32,6 @@ const Newsletter = () => {
 
       if (currentUpdate >= totalUpdates) {
         clearInterval(intervalId);
-        console.log("Countdown completed! 1");
       }
     }, updateInterval);
 
