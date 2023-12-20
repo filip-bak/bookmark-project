@@ -19,7 +19,7 @@ const FeatureTab = ({ tab }) => {
         <FigureBackground
           width={isDesktop ? 640 : 307}
           height={
-            isDesktop ? (isBigFigure ? 400 : 354) : isBigFigure ? 244 : 203
+            isDesktop ? (isBigFigure ? 400 : 354) : isBigFigure ? 260 : 203
           }
           top={isDesktop ? 80 : 33}
           reverse
