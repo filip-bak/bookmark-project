@@ -1,0 +1,87 @@
+@use "@styles/variables" as *;
+@use "@styles/mixins" as m;
+
+.container {
+    --width: 375px;
+    position: fixed;
+    top: 0;
+    right: calc(var(--width) * -1);
+
+    width: var(--width);
+    height: 100%;
+    padding: 37px 28px 37px 32px;
+    background-color: $background-dark-blue;
+    max-width: var(--width);
+    transition: transform 0.3s ease;
+
+    &.open {
+        transform: translateX(calc(var(--width) * -1));
+    }
+    z-index: 2000;
+
+    @include m.mq(tablet) {
+        display: none;
+    }
+}
+.content {
+    max-height: 700px;
+}
+.box {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 39px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    padding: 0;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.close {
+    fill: $light-color;
+    width: 20px;
+    height: 15px;
+    transition: fill 0.2s;
+
+    &:hover {
+        fill: $brand-accent;
+    }
+}
+
+.nav-links {
+    row-gap: 1px;
+    margin-right: 18px;
+    margin-bottom: 23px;
+    & > a {
+        font-size: 20px;
+        letter-spacing: 2.3px;
+        padding-block: 17px;
+    }
+    & :first-child {
+        border-block: 1px solid rgba(255, 255, 255, 0.13);
+    }
+    & :last-child {
+        border-block: 1px solid rgba(255, 255, 255, 0.13);
+    }
+}
+.login-btn {
+    background-color: transparent;
+    border-color: $light-color;
+    margin-bottom: 13.8rem;
+    & span {
+        color: $light-color;
+        font-size: $fs-500;
+    }
+
+    &:hover span,
+    &:focus span {
+        color: $background-dark-blue;
+    }
+}
