@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import Button from "../../../components/Button";
-import styles from "./Newsletter.module.scss";
 import { newsletterSchema } from "./schema";
 import useResponsive from "../../../hooks/useResponsive";
+import styles from "./Newsletter.module.scss";
+import icons from "@icons/icons.svg";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
@@ -66,6 +67,11 @@ const Newsletter = () => {
             placeholder="Enter your email address"
           />
           {error ? <div className={styles.error}>{error}</div> : null}
+          {error ? (
+            <svg className={styles["error-icon"]}>
+              <use href={`${icons}#icon-error`}></use>
+            </svg>
+          ) : null}
         </div>
 
         <Button

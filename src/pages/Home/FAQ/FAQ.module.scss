@@ -13,7 +13,7 @@
 }
 .content {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 46px;
     padding-inline: 28px;
 
     @include m.mq(desktop) {
@@ -34,7 +34,7 @@
 .description {
     @include m.description;
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.7;
     @include m.mq(desktop) {
         font-size: $fs-400;
         line-height: unset;
