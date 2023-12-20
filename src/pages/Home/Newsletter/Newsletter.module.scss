@@ -120,13 +120,10 @@
 }
 .error-icon {
     position: absolute;
-    top: 16px;
+    top: 13px;
     right: 16px;
     width: 20px;
     height: 20px;
-    @include m.mq(desktop) {
-        top: 11px;
-    }
 }
 
 .btn-text {
