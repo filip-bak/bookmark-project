@@ -1,0 +1,22 @@
+@use "@styles/variables" as *;
+@use "@styles/mixins" as m;
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 39px;
+}
+.link {
+    display: flex;
+}
+.icon {
+    fill: $light-color;
+    width: 24px;
+    height: 24px;
+    transition: fill 0.2s;
+
+    &:hover {
+        fill: $brand-accent;
+    }
+}
