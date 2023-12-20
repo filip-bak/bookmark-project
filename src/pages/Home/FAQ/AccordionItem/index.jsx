@@ -1,4 +1,3 @@
-// AccordionItem.jsx
 import { useState } from "react";
 import icons from "@icons/icons.svg";
 import styles from "./AccordionItem.module.scss";

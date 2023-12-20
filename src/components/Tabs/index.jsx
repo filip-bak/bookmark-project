@@ -1,8 +1,7 @@
-import { Fragment, useState } from "react";
-import PropTypes from "prop-types";
-import styles from "./Tabs.module.scss";
-import SplitBox from "../SplitBox";
+import { useState } from "react";
 import FeatureTab from "../FeatureTab";
+import SplitBox from "../SplitBox";
+import styles from "./Tabs.module.scss";
 
 const Tabs = ({ tabs }) => {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
