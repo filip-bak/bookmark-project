@@ -13,21 +13,28 @@ const Newsletter = () => {
   const { isDesktop } = useResponsive();
 
   useEffect(() => {
-    const animationDuration = 20000;
-    const framesPerSecond = 60;
-    const decrementPerSecond = 1850;
-    const decrement = decrementPerSecond / framesPerSecond;
-    const interval = 1000 / framesPerSecond;
+    const decrementPerSecond = 1750;
+    const durationInSeconds = 20;
+    const updateInterval = 50;
+    const updatesPerSecond = 1000 / updateInterval;
 
-    const decreaseCount = () => {
-      setPeopleCount((prevCount) => Math.max(0, prevCount - decrement));
-    };
-    const intervalId = setInterval(decreaseCount, interval);
+    const totalUpdates = durationInSeconds * updatesPerSecond;
+    const decrementPerUpdate = decrementPerSecond / updatesPerSecond;
 
-    if (peopleCount <= 0) {
-      clearTimeout(intervalId);
-      return;
-    }
+    let currentUpdate = 0;
+
+    const intervalId = setInterval(() => {
+      currentUpdate++;
+
+      setPeopleCount((prevValue) =>
+        Math.max(prevValue - decrementPerUpdate, 0)
+      );
+
+      if (currentUpdate >= totalUpdates) {
+        clearInterval(intervalId);
+        console.log("Countdown completed! 1");
+      }
+    }, updateInterval);
 
     return () => {
       clearTimeout(intervalId);
