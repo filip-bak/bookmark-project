@@ -9,8 +9,8 @@
     max-width: 375px;
     margin-inline: auto;
 
-    @include m.mq(tablet) {
-        max-width: 965px;
+    @include m.mq(tablet, desktop) {
+        max-width: 505px;
     }
 
     @include m.mq(desktop) {

@@ -8,14 +8,16 @@
     align-items: center;
     padding-inline: var(--wrapper-padding-inline);
     margin-inline: auto;
-    padding-block: 2.52rem;
+    padding-top: 37px;
+    padding-bottom: 44px;
     row-gap: 45px;
 
     background-color: $background-dark-blue;
 
     @include m.mq(tablet) {
         flex-direction: row;
-        padding-block: 1.8rem;
+        padding-top: 1.8rem;
+        padding-bottom: 1.8rem;
     }
 }
 .box {

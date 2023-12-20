@@ -65,6 +65,9 @@
 .poster {
     position: relative;
     margin-left: 15px;
+    @include m.mq(tablet, desktop) {
+        margin-left: 80px;
+    }
     @include m.mq(desktop) {
         transform: translateY(-78px);
     }
@@ -72,6 +75,10 @@
 
 .illustration {
     width: 350px;
+
+    @include m.mq(tablet, desktop) {
+        width: 370px;
+    }
 
     @include m.mq(desktop) {
         width: 650px;
